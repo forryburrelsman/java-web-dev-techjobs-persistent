@@ -43,13 +43,6 @@ public class EmployerController {
     }
 
 
-//    @GetMapping("view")
-//    public String displayAllEmployers(Model model) {
-//        model.addAttribute("employers", employerRepository.findAll());
-//        return "employers/view";
-//    }
-
-
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
