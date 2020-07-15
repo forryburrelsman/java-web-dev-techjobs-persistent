@@ -18,7 +18,7 @@ public class Employer extends AbstractEntity {
     //Use the @OneToMany and @JoinColumn annotations on the jobs list in Employer
     // to declare the relationship between data tables.
     @OneToMany //(mappedBy = "employer")
-    @JoinColumn
+    @JoinColumn(name = "employer_id")
     private final List<Job> jobs = new ArrayList<>();
 
     public Employer(String location) {

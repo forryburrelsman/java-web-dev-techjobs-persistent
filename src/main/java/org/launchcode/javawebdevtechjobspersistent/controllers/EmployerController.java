@@ -24,15 +24,9 @@ public class EmployerController {
         return "employers/add";
     }
 
-    @GetMapping("view")
-    public String displayAllEmployers(Model model) {
-        model.addAttribute("employers", employerRepository.findAll());
-        return "employers/view";
-    }
-
-    @PostMapping("view")
+    @PostMapping("add")
     public String processAddEmployerForm(@ModelAttribute @Valid Employer newEmployer,
-                                    Errors errors, Model model) {
+                                         Errors errors, Model model) {
         if (errors.hasErrors()) {
             return "employers/add";
         }
@@ -42,6 +36,11 @@ public class EmployerController {
         return "employers/view";
     }
 
+    @GetMapping("view")
+    public String displayAllEmployers(Model model) {
+        model.addAttribute("employers", employerRepository.findAll());
+        return "employers/view";
+    }
 
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
