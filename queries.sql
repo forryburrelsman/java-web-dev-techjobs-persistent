@@ -10,3 +10,7 @@ WHERE location = "St. Louis";
 DROP TABLE IF EXISTS techjobs.job;
 
 ## Part 4: Test it with SQL
+SELECT skill.name, description
+FROM skill
+INNER JOIN job_skills ON skill.id = job_skills.skills_id
+WHERE jobs_id is not null;
